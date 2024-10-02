@@ -116,7 +116,7 @@ def status(db):
     Print the count of each nature of incidents.
     """
     cursor = db.cursor()
-    cursor.execute('SELECT nature, COUNT(*) FROM incidents GROUP BY nature ORDER BY COUNT(*) DESC')
+    cursor.execute('SELECT nature, COUNT(*) FROM incidents GROUP BY nature order by nature ASC')
     rows = cursor.fetchall()
     for row in rows:
         print(f"{row[0]}|{row[1]}")
