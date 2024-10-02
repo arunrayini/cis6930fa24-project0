@@ -2,5 +2,6 @@
 pypdf = "*"
 pytest = "*"
 pymupdf = "*"
+requests = "*"
 
 [dev-packages]
