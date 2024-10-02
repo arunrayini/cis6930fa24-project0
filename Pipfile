@@ -1,5 +1,6 @@
 [packages]
 pypdf = "*"
 pytest = "*"
+pymupdf = "*"
 
 [dev-packages]
