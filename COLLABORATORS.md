@@ -1,4 +1,4 @@
-Real Python | https://realpython.com | Used for reference on working with SQLite and managing databases in Python
-Stackoverflow | https://stackoverflow.com | Provided guidance on handling file operations and mocking in unit tests
-PyPDF2 Documentation | https://pypdf2.readthedocs.io/ | Used for reference on PDF reading and text extraction
+Real Python | https://realpython.com | Referred to resources for handling SQLite and managing databases in Python.
+Stackoverflow | https://stackoverflow.com | Offered insights on managing file operations and utilizing mocking techniques in unit tests.
+PyPDF2 Documentation | https://pypdf2.readthedocs.io/ | Consulted for guidance on PDF reading and extracting text.
 
