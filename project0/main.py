@@ -1,6 +1,5 @@
 import argparse
 import logging
-import pandas as pd
 import urllib.request
 import pypdf
 from pypdf import PdfReader
@@ -9,84 +8,95 @@ import re
 import sqlite3
 import os
 
-# Initialize the logger
+# Initializing the logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def fetchincidents(url):
     """
-    Downloads the incident PDF from the provided URL and saves it to a temporary file.
-    
-    :param url: URL of the incident PDF file
-    :return: Path to the saved PDF file
+    Retrieving a PDF document from the provided URL and saving it temporarily.
+
+    :param url: The URL of the incident PDF file.
+    :return: The file path of the saved temporary PDF.
     """
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36'
+    # Defining headers to mimic a browser request
+    request_headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
     }
+
+    # Opening the URL connection and reading the content
+    pdf_request = urllib.request.Request(url, headers=request_headers)
+    pdf_response = urllib.request.urlopen(pdf_request)
+    pdf_content = pdf_response.read()
+
+    # Generating a temporary file to hold the PDF
+    temp_file_path = tempfile.mkstemp(suffix=".pdf")[1]
     
-    req = urllib.request.Request(url, headers=headers)
-    response = urllib.request.urlopen(req)
-    
-    # Read the content of the PDF
-    pdf_content = response.read()
-    
-    # Write the PDF content to a temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
-        temp_pdf.write(pdf_content)
-        temp_pdf_path = temp_pdf.name
-    
-    return temp_pdf_path
+    # Opening the temporary file and writing the PDF content
+    with open(temp_file_path, 'wb') as temp_file:
+        temp_file.write(pdf_content)
+
+    return temp_file_path
 
 def extractincidents(pdf_file_path):
-    # Initialize necessary variables
-    first_page_flag = True
-    field_count = 3
-    data_store = []
+    """
+    Extract incident data from the provided PDF and return a list of tuples.
     
-    # Read the PDF file
-    read_file = PdfReader(pdf_file_path)
+    :param pdf_file_path: Path to the PDF file.
+    :return: List of tuples containing the extracted incident data.
+    """
+    def is_complete_row(fields):
+        """Check if the row contains exactly 5 fields."""
+        return len(fields) == 5
 
-    for page in read_file.pages:
-        page_text = page.extract_text(extraction_mode="layout", layout_mode_space_vertically=False).split("\n")
+    def clean_and_split(line):
+        """Clean and split each line by spaces, removing extra whitespaces."""
+        return re.split(r"\s{2,}", line.strip())
 
-        if first_page_flag:
-            # Process headers only on the first page
-            headers = re.split(r"\s{2,}", page_text[2])[1:]
-            first_page_flag = False
-            # Skip the header lines
-            page_text = page_text[3:]
-
-        # Add valid rows (those with 5 fields) to the data_store
-        for line in page_text:
-            row_data = re.split(r"\s{2,}", line.strip())
-            if len(row_data) == 5:
-                data_store.append([field.strip() for field in row_data])
-
-    # Filter valid rows based on field count
-    data_store = [row for row in data_store if len(row) >= field_count and any(row)]
-
-    # Convert the list to a DataFrame
-    incidents_df = pd.DataFrame(data_store, columns=['incident_time', 'incident_number', 'incident_location', 'nature', 'incident_ori'])
-    return incidents_df
+    incidents_list = []
+    
+    # Reading the PDF
+    reader = PdfReader(pdf_file_path)
+    first_page = True
+    
+    # Iterating through each page in the PDF
+    for page in reader.pages:
+        # Extracting page text and splitting it into lines
+        raw_text = page.extract_text(extraction_mode="layout", layout_mode_space_vertically=False)
+        lines = raw_text.split("\n")
+        
+        # Skipping the header processing if it's the first page
+        if first_page:
+            first_page = False
+            lines = lines[3:] 
+        
+        # Processing each line on the page
+        for line in lines:
+            fields = clean_and_split(line)
+            if is_complete_row(fields):
+                # Add the tuple containing incident fields to the list
+                incidents_list.append(tuple(fields))
+    
+    return incidents_list  # Returning a list of tuples
 
 def createdb():
     """
-    Create a SQLite database named 'normanpd.db' in the 'resources' directory. 
-    If it already exists, it will be overwritten.
+    Creating a SQLite database file 'normanpd.db' in the 'resources' directory.
+    If the file already exists, it will be deleted and a new one will be created.
     """
-    # Define the path to the database in the 'resources' directory
+    # Defining the path for the database in the 'resources' directory
     db_path = os.path.join('resources', 'normanpd.db')
     
-    # Check if the database already exists and delete it
-    if os.path.exists(db_path):
-        os.remove(db_path)
-        print(f"Deleted existing database: {db_path}")
-
-    # Create a new database
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
+    # Removing existing database file if it exists
+    if os.path.isfile(db_path):
+        os.unlink(db_path)  # Deleting the file safely
+        print(f"Existing database has been removed: {db_path}")
     
-    # Create the 'incidents' table
+    # Establishing a new connection to the database
+    connection = sqlite3.connect(db_path)
+    cursor = connection.cursor()
+    
+    # Creating the 'incidents' table within the database
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS incidents (
             incident_time TEXT,
@@ -96,32 +106,31 @@ def createdb():
             incident_ori TEXT
         )
     ''')
-    conn.commit()
-    print(f"Created new database and table at {db_path}.")
+    connection.commit()
+    print(f"New database and table have been created at: {db_path}")
     
-    return conn
+    return connection
 
 def populatedb(db, incidents):
     """
-    Populate the SQLite database with incident data.
+    Populating the SQLite database with incident data using tuples.
     
     :param db: Connection to the SQLite database.
-    :param incidents: List of incident data to be inserted.
+    :param incidents: List of tuples with incident data.
     """
     cursor = db.cursor()
     
-    # Insert incident data into the database
+    # Inserting incident data into the database
     cursor.executemany('''
         INSERT INTO incidents (incident_time, incident_number, incident_location, nature, incident_ori)
-        VALUES (:incident_time, :incident_number, :incident_location, :nature, :incident_ori)
-    ''', incidents.to_dict('records'))  # Convert the DataFrame rows to dictionary format
-    
+        VALUES (?, ?, ?, ?, ?)
+    ''', incidents)  # Each tuple in the list is passed to the query
+
     db.commit()
-    # print(f"Inserted {len(incidents)} records into the database.")
 
 def status(db):
     """
-    Print the count of each nature of incidents.
+    Printing the count of each nature of incidents.
     """
     cursor = db.cursor()
     cursor.execute('SELECT nature, COUNT(*) FROM incidents GROUP BY nature order by nature ASC')
@@ -130,24 +139,24 @@ def status(db):
         print(f"{row[0]}|{row[1]}")
 
 def main(url):
-    # Download data
+    # Downloading data
     incident_data = fetchincidents(url)
 
-    # Extract data
+    # Extracting data
     incidents = extractincidents(incident_data)
 	
-    # Create new database
+    # Creating new database
     db = createdb()
 	
-    # Insert data
+    # Inserting data
     populatedb(db, incidents)
 	
-    # Print incident counts
+    # Printing incident counts
     status(db)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--incidents", type=str, required=True, help="Incident summary url.")
+    parser.add_argument("--incidents", type=str, required=True, help="Incident summary URL.")
      
     args = parser.parse_args()
     if args.incidents:
