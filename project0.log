@@ -1,0 +1,148 @@
+10/02/2024 18:50:17 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:50:18 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:50:19 - root - INFO - Extracted incidents from PDF.
+10/02/2024 18:50:19 - root - INFO - Created SQLite database.
+10/02/2024 18:50:19 - root - INFO - Created incidents table.
+10/02/2024 18:50:19 - root - INFO - Populated database with incidents.
+10/02/2024 18:50:19 - root - INFO - Extracted and counted 'Nature' incidents.
+10/02/2024 18:50:19 - root - INFO - Closed the database connection.
+10/02/2024 18:52:33 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:52:34 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:52:35 - root - INFO - Extracted 'Nature' column from PDF.
+10/02/2024 18:52:35 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 18:54:04 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:54:05 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:54:06 - root - INFO - Extracted incidents from PDF.
+10/02/2024 18:54:06 - root - INFO - Created SQLite database.
+10/02/2024 18:54:06 - root - INFO - Created incidents table.
+10/02/2024 18:54:06 - root - INFO - Populated database with incidents.
+10/02/2024 18:54:06 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 18:54:06 - root - INFO - Closed the database connection.
+10/02/2024 18:56:35 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:56:35 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:56:36 - root - INFO - Extracted incidents from PDF.
+10/02/2024 18:56:36 - root - INFO - Created SQLite database.
+10/02/2024 18:56:36 - root - INFO - Created incidents table.
+10/02/2024 18:56:36 - root - INFO - Populated database with incidents.
+10/02/2024 18:56:36 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 18:56:37 - root - INFO - Closed the database connection.
+10/02/2024 18:58:05 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:58:06 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:58:07 - root - INFO - Extracted incidents from PDF.
+10/02/2024 18:58:07 - root - INFO - Created SQLite database.
+10/02/2024 18:58:07 - root - INFO - Created incidents table.
+10/02/2024 18:58:07 - root - INFO - Populated database with incidents.
+10/02/2024 18:58:07 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 18:58:07 - root - INFO - Closed the database connection.
+10/02/2024 18:59:40 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 18:59:41 - root - INFO - Downloaded the PDF file.
+10/02/2024 18:59:41 - root - INFO - Extracted incidents from PDF.
+10/02/2024 18:59:41 - root - INFO - Created SQLite database.
+10/02/2024 18:59:41 - root - INFO - Created incidents table.
+10/02/2024 18:59:41 - root - INFO - Populated database with incidents.
+10/02/2024 18:59:41 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 18:59:41 - root - INFO - Closed the database connection.
+10/02/2024 19:03:11 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:03:12 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:03:12 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:03:12 - root - INFO - Created SQLite database.
+10/02/2024 19:03:12 - root - INFO - Created incidents table.
+10/02/2024 19:03:12 - root - INFO - Populated database with incidents.
+10/02/2024 19:03:12 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 19:03:13 - root - INFO - Closed the database connection.
+10/02/2024 19:04:35 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:04:35 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:04:36 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:04:36 - root - INFO - Created SQLite database.
+10/02/2024 19:04:36 - root - INFO - Created incidents table.
+10/02/2024 19:04:36 - root - INFO - Populated database with incidents.
+10/02/2024 19:04:36 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 19:04:36 - root - INFO - Closed the database connection.
+10/02/2024 19:05:55 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:05:56 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:05:56 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:05:56 - root - INFO - Created SQLite database.
+10/02/2024 19:05:56 - root - INFO - Created incidents table.
+10/02/2024 19:05:56 - root - INFO - Populated database with incidents.
+10/02/2024 19:05:56 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 19:05:57 - root - INFO - Closed the database connection.
+10/02/2024 19:07:32 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:07:33 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:07:33 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:07:33 - root - INFO - Created SQLite database.
+10/02/2024 19:07:33 - root - INFO - Created incidents table.
+10/02/2024 19:07:33 - root - INFO - Populated database with incidents.
+10/02/2024 19:07:33 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 19:07:33 - root - INFO - Closed the database connection.
+10/02/2024 19:09:09 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:09:10 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:09:10 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:09:10 - root - INFO - Created SQLite database.
+10/02/2024 19:09:10 - root - INFO - Reset the incidents table.
+10/02/2024 19:09:10 - root - INFO - Created incidents table.
+10/02/2024 19:09:10 - root - INFO - Populated database with incidents.
+10/02/2024 19:09:10 - root - INFO - Counted 'Nature' incidents.
+10/02/2024 19:09:10 - root - INFO - Closed the database connection.
+10/02/2024 19:10:36 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:10:37 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:10:38 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:10:38 - root - INFO - Created SQLite database.
+10/02/2024 19:10:38 - root - INFO - Reset the incidents table.
+10/02/2024 19:10:38 - root - INFO - Created incidents table.
+10/02/2024 19:10:38 - root - INFO - Populated database with incidents.
+10/02/2024 19:10:38 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:10:38 - root - INFO - Closed the database connection.
+10/02/2024 19:12:11 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:12:12 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:12:12 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:12:12 - root - INFO - Created SQLite database.
+10/02/2024 19:12:12 - root - INFO - Reset the incidents table.
+10/02/2024 19:12:12 - root - INFO - Created incidents table.
+10/02/2024 19:12:12 - root - INFO - Populated database with incidents.
+10/02/2024 19:12:13 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:12:13 - root - INFO - Closed the database connection.
+10/02/2024 19:30:12 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:30:12 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:30:13 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:30:13 - root - INFO - Created SQLite database.
+10/02/2024 19:30:13 - root - INFO - Reset the incidents table.
+10/02/2024 19:30:13 - root - INFO - Created incidents table.
+10/02/2024 19:30:13 - root - INFO - Populated database with incidents.
+10/02/2024 19:30:13 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:30:13 - root - INFO - Closed the database connection.
+10/02/2024 19:32:55 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:32:56 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:32:57 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:32:57 - root - INFO - Created SQLite database.
+10/02/2024 19:32:57 - root - INFO - Reset the incidents table.
+10/02/2024 19:32:57 - root - INFO - Created incidents table.
+10/02/2024 19:32:57 - root - INFO - Populated database with incidents.
+10/02/2024 19:32:57 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:32:57 - root - INFO - Closed the database connection.
+10/02/2024 19:35:05 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:35:06 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:35:06 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:35:06 - root - INFO - Created SQLite database.
+10/02/2024 19:35:06 - root - INFO - Reset the incidents table.
+10/02/2024 19:35:06 - root - INFO - Created incidents table.
+10/02/2024 19:35:06 - root - INFO - Populated database with incidents.
+10/02/2024 19:35:06 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:35:07 - root - INFO - Closed the database connection.
+10/02/2024 19:35:25 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:35:26 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:35:27 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:35:27 - root - INFO - Created SQLite database.
+10/02/2024 19:35:27 - root - INFO - Reset the incidents table.
+10/02/2024 19:35:27 - root - INFO - Created incidents table.
+10/02/2024 19:35:27 - root - INFO - Populated database with incidents.
+10/02/2024 19:35:27 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:35:27 - root - INFO - Closed the database connection.
+10/02/2024 19:37:17 - root - INFO - Starting process with URL: https://www.normanok.gov/sites/default/files/documents/2024-08/2024-08-01_daily_incident_summary.pdf
+10/02/2024 19:37:18 - root - INFO - Downloaded the PDF file.
+10/02/2024 19:37:19 - root - INFO - Extracted incidents from PDF.
+10/02/2024 19:37:19 - root - INFO - Created SQLite database.
+10/02/2024 19:37:19 - root - INFO - Reset the incidents table.
+10/02/2024 19:37:19 - root - INFO - Created incidents table.
+10/02/2024 19:37:19 - root - INFO - Populated database with incidents.
+10/02/2024 19:37:19 - root - INFO - Counted instances of 'Nature'.
+10/02/2024 19:37:19 - root - INFO - Closed the database connection.
