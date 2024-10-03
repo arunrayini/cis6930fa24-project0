@@ -90,7 +90,7 @@ def createdb():
     # Removing existing database file if it exists
     if os.path.isfile(db_path):
         os.unlink(db_path)  # Deleting the file safely
-        print(f"Existing database has been removed: {db_path}")
+        #print(f"Existing database has been removed: {db_path}")
     
     # Establishing a new connection to the database
     connection = sqlite3.connect(db_path)
@@ -107,7 +107,7 @@ def createdb():
         )
     ''')
     connection.commit()
-    print(f"New database and table have been created at: {db_path}")
+    #print(f"New database and table have been created at: {db_path}")
     
     return connection
 
