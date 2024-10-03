@@ -33,7 +33,11 @@ For testing: pipenv run python -m pytest -v
 
 # Demo
 
+
+https://github.com/user-attachments/assets/ccdb28a1-2898-4441-89e6-eb2ccd996d23
+
 # Functions
+
 
 fetchincidents(url)
 Description: Downloads the PDF from the provided URL and saves it in a temporary file.
